@@ -13,11 +13,10 @@ alias ls=exa
 alias cat=batcat
 alias vim=nvim
 alias cbc='xclip -sel c'
-alias wcp=win32yank
 
 # functions
 function exp(){
-  explorer.exe $@;
+  wslpath -w $@ | explorer.exe;
 }
 
 # clone antidote if necessary
