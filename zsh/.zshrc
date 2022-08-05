@@ -13,10 +13,12 @@ alias ls=exa
 alias cat=batcat
 alias vim=nvim
 alias cbc='xclip -sel c'
+alias wcp=~/wcp # simlink to win32yank
+alias wp='wslpath -u $(wslvar -s USERPROFILE)'
 
 # functions
-function exp(){
-  wslpath -w $@ | explorer.exe;
+function open(){
+ explorer.exe $(wslpath -w .);
 }
 
 # clone antidote if necessary
@@ -39,8 +41,7 @@ autoload -Uz compinit && compinit
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
-
 # xorg server wsl conf
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0 # in WSL 2
 export LIBGL_ALWAYS_INDIRECT=1
+

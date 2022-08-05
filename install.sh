@@ -17,7 +17,7 @@ sudo apt install -y \
   libbz2-dev libreadline-dev libsqlite3-dev wget llvm \
   libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
   curl git stow zsh bat zip unzip ripgrep fd-find fzf neovim tmux \
-  default-jre default-jdk exa nala
+  default-jre default-jdk exa nala wslu
 
 # symlink dot files
 stow zsh
