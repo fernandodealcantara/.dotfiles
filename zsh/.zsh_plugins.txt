@@ -8,7 +8,6 @@ zsh-users/zsh-completions
 # annotations are also allowed:
 ohmyzsh/ohmyzsh   path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh   path:plugins/colored-man-pages
-ohmyzsh/ohmyzsh   path:tree/master/plugins/web-search
 romkatv/zsh-bench kind:path
 olets/zsh-abbr    kind:defer
 

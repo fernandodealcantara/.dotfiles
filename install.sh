@@ -28,7 +28,11 @@ function symLink(){
     stow -v -d ~/.dotfiles/ -t ~ fonts
     stow -v -d ~/.dotfiles/ -t ~ neovim
     stow -v -d ~/.dotfiles/ -t ~ git
-    stow -v -d ~/.dotfiles/ -t "$(winpath AppData)/alacritty" alacritty
+}
+
+function copyWindowsConfigFiles(){
+    cp ~/.dotfiles/alacritty/alacritty.yml "$(wslpath $(wslvar -l AppData))/alacritty"
+    cp ~/.dotfiles/wslconfig/.wslconfig $(wslpath $(wslvar -s USERPROFILE))
 }
 
 function gitSetup(){
@@ -47,6 +51,7 @@ upgrade
 addRepos
 installPackages
 symLink
+copyWindowsConfigFiles
 gitSetup
 getClipboardTool
 
