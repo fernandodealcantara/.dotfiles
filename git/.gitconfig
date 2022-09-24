@@ -1,9 +1,4 @@
-[user]
-  name = "Fernando de Alcantara"
-  email = "45339608+fernandodealcantara@users.noreply.github.com"  
 [core]
 	editor = nvim
-[commit]
-	template = /home/fer/.gitmessage.txt
 [init]
 	defaultBranch = main
