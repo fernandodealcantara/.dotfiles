@@ -44,7 +44,7 @@ function gitSetup(){
 
 function getClipboardTool(){
     wget https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip -O /tmp/win32yank.zip
-    unzip /tmp/win32yank.zip -d "$(wslpath $(wslvar -s USERPROFILE))/win32yank.exe"
+    unzip /tmp/win32yank.zip win32yank.exe -d $(wslpath $(wslvar -s USERPROFILE))
 }
 
 upgrade
