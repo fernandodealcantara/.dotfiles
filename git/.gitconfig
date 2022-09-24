@@ -2,3 +2,7 @@
 	editor = nvim
 [init]
 	defaultBranch = main
+[user]
+	email = 45339608+fernandodealcantara@users.noreply.github.com
+[commit]
+	template = ~/.gitmessage.txt
