@@ -31,7 +31,7 @@ function symLink(){
 }
 
 function copyWindowsConfigFiles(){
-    cp ~/.dotfiles/alacritty/alacritty.yml "$(wslpath $(wslvar -l AppData))/alacritty"
+    cp ~/.dotfiles/alacritty/alacritty.yml "$(wslpath $(wslvar -l AppData))/alacritty/"
     cp ~/.dotfiles/wslconfig/.wslconfig $(wslpath $(wslvar -s USERPROFILE))
 }
 
