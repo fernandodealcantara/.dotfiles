@@ -31,6 +31,7 @@ function symLink(){
 }
 
 function copyWindowsConfigFiles(){
+    mkdir "$(wslpath $(wslvar -l AppData))/alacritty"
     cp ~/.dotfiles/alacritty/alacritty.yml "$(wslpath $(wslvar -l AppData))/alacritty/"
     cp ~/.dotfiles/wslconfig/.wslconfig $(wslpath $(wslvar -s USERPROFILE))
 }
@@ -52,7 +53,6 @@ addRepos
 installPackages
 symLink
 copyWindowsConfigFiles
-gitSetup
 getClipboardTool
 
 # give permission to zsh
