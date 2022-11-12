@@ -1,19 +1,18 @@
+#!/usr/bin/env bash
 # user info
-export USER_EMAIL="45339608+fernandodealcantara@users.noreply.github.com"
-export USER_NAME="Fernando de Alcantara"
-export GIT_COMMIT_TEMPLATE="~/.gitmessage.txt"
+USER_EMAIL="45339608+fernandodealcantara@users.noreply.github.com"
+USER_NAME='Fernando de Alcantara'
+GIT_COMMIT_TEMPLATE="$HOME/.gitmessage.txt"
+export USER_EMAIL
+export USER_NAME
+export GIT_COMMIT_TEMPLATE
 # WSL win 10 gui app config vcxsrv
-export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0 # in WSL 2
-export LIBGL_ALWAYS_INDIRECT=1
+DISPLAY="$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null)":0 # in WSL 2
+LIBGL_ALWAYS_INDIRECT=1
+export DISPLAY
+export LIBGL_ALWAYS_INDIRECT
 
 # aliases
 alias ls=exa
 alias cat=batcat
 alias vim=nvim
-alias pclip="$(wslpath $(wslvar -s USERPROFILE))/win32yank.exe -o"  # paste from clipboard
-alias cclip="$(wslpath $(wslvar -s USERPROFILE))/win32yank.exe -i" # copy to clipboard
-
-# functions
-function winpath(){
-  wslpath $(wslvar -l $@)
-}
