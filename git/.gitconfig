@@ -2,8 +2,3 @@
 	editor = nvim
 [init]
 	defaultBranch = main
-[commit]
-	template = /home/fer/.gitmessage.txt
-[user]
-	name = Fernando de Alcantara
-	email = 45339608+fernandodealcantara@users.noreply.github.com
