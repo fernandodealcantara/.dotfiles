@@ -7,12 +7,27 @@ export USER_EMAIL
 export USER_NAME
 export GIT_COMMIT_TEMPLATE
 # WSL win 10 gui app config vcxsrv
-DISPLAY="$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null)":0 # in WSL 2
-LIBGL_ALWAYS_INDIRECT=1
-export DISPLAY
-export LIBGL_ALWAYS_INDIRECT
+#DISPLAY="$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null)":0 # in WSL 2
+#LIBGL_ALWAYS_INDIRECT=1
+#export DISPLAY
+#export LIBGL_ALWAYS_INDIRECT
 
 # aliases
 alias ls=exa
 alias cat=batcat
 alias vim=nvim
+
+# run a postgres container with latest alpine image
+function startpg() {
+  docker run -d --rm --name pg \
+    -e POSTGRES_PASSWORD=postgrespw \
+    -e POSTGRES_USER=fer \
+    -e POSTGRES_DB=fer_db \
+    -p 5432:5432 \
+    postgres:alpine
+}
+
+# rm a postgres container
+function stoppg() {
+  docker stop pg
+}
